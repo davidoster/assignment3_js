@@ -14,22 +14,21 @@ function getRandomInt(max) {
 
 class TShirt {
     constructor(random, name, size, color, fabric) {
+        this._basePrice = 10
         if(random == true) {
             // console.log("random defined!!!")
             this.name = "AAA"
             this.size = Object.keys(new Size().sizes)[getRandomInt(7)]
             this.color = Object.keys(new Color().colors)[getRandomInt(7)]
-            this.fabric = Object.keys(new Fabric().fabrics)[getRandomInt(7)]
-            
+            this.fabric = Object.keys(new Fabric().fabrics)[getRandomInt(7)]   
         } else {
             this.name = name
             this.size = size
             this.color = color
             this.fabric = fabric
-            this._basePrice = 10
-            this.price = this._basePrice    
+            
         }
-        
+        this.price = this._basePrice + this._fabric
     }
 
     set name(value) {
