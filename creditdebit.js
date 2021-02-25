@@ -1,5 +1,3 @@
-var TShirt = require('./tshirt')
-
 class CreditDebit {
     constructor(tshirt) {
         this.tshirt = tshirt
