@@ -15,11 +15,11 @@ function getRandomInt(max) {
 class TShirt {
     constructor(random, name, size, color, fabric) {
         if(random == true) {
-            console.log("random defined!!!")
+            // console.log("random defined!!!")
             this.name = "AAA"
-            this.size = Object.keys(new Size().sizes)[getRandomInt(6)]
-            this.color = Object.keys(new Color().colors)[getRandomInt(6)]
-            this.fabric = Object.keys(new Fabric().fabrics)[getRandomInt(6)]
+            this.size = Object.keys(new Size().sizes)[getRandomInt(7)]
+            this.color = Object.keys(new Color().colors)[getRandomInt(7)]
+            this.fabric = Object.keys(new Fabric().fabrics)[getRandomInt(7)]
             
         } else {
             this.name = name
@@ -43,7 +43,8 @@ class TShirt {
 
     set size(value) {
         let mySize = new Size()
-        this._size = mySize.sizes[value]
+        // console.log(`size from setter: ${mySize.sizes[value]}`)
+        this._size = mySize.sizes[value] - 1
     }
 
     get size() {
@@ -52,10 +53,11 @@ class TShirt {
 
     set color(value) {
         let myColor = new Color()
-        this._color = myColor.colors[value]
+        this._color = myColor.colors[value] - 1
     }
 
     get color() {
+        //     Object.keys(fabric.fabrics).find(k => fabric.fabrics[k] === this._fabric)
         return Object.keys(new Color().colors)[this._color]
     }
 
@@ -72,6 +74,7 @@ class TShirt {
         Object.keys(fabric.fabrics).find(k => fabric.fabrics[k] === this._fabric)
         */
         var fabric = new Fabric()
+        // console.log("from getter fabric: " + fabric.fabrics['WOOL'])
         return Object.keys(fabric.fabrics).find(k => fabric.fabrics[k] === this._fabric)
     }
 }

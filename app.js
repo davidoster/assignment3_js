@@ -1,7 +1,7 @@
 var TShirt = require('./tshirt')
 var Color = require('./color')
 
-console.log(new Color().colors)
+// console.log(new Color().colors)
 
 
 let myTShirt = new TShirt(true, "AAA", 'XS', 'RED', 'WOOL')
