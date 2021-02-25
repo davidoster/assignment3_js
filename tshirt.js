@@ -76,6 +76,10 @@ class TShirt {
         // console.log("from getter fabric: " + fabric.fabrics['WOOL'])
         return Object.keys(fabric.fabrics).find(k => fabric.fabrics[k] === this._fabric)
     }
+
+    toString() {
+        return `Name: ${this.name}, Size: ${this.size}, Color: ${this.color}, Fabric: ${this.fabric}`
+    }
 }
 
 module.exports = TShirt
