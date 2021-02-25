@@ -1,5 +1,5 @@
 var TShirt = require('./tshirt')
-var Color = require('./color')
+var CreditDebit = require('./creditdebit')
 
 // console.log(new Color().colors)
 
@@ -15,3 +15,6 @@ var Color = require('./color')
 for(let i = 0; i < 15; i++) {
     console.log(new TShirt(true))
 }
+
+var creditDebitPayment = new CreditDebit(new TShirt(true))
+console.log(creditDebitPayment.pay())
